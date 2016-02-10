@@ -154,7 +154,7 @@ public class ChooseAreaActivity extends Activity {
      */
     private void queryCounties() {
         countyList = kamiWeatherDB.loadCounties(selectedCity.getId());
-        if (cityList.size() > 0) {
+        if (countyList.size() > 0) {
             dataList.clear();
             for (County county : countyList) {
                 dataList.add(county.getCountyName());
