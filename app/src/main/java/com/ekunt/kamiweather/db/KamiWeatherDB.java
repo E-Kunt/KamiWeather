@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * 封装了对数据库的常用操作
- * Created by wyk73 on 2016/1/20.
+ * Created by E-Kunt on 2016/1/20.
  */
 public class KamiWeatherDB {
     /**
@@ -126,7 +126,7 @@ public class KamiWeatherDB {
      * @param provinceId
      * @return List<City>
      */
-    public List<City> loadCity(int provinceId) {
+    public List<City> loadCities(int provinceId) {
         List<City> list = new ArrayList<City>();
         Cursor cursor = db.query("City",null,"province_id = ?",new String[]{String.valueOf(provinceId)},
                 null,null,null,null);
@@ -151,7 +151,7 @@ public class KamiWeatherDB {
      * @param cityId
      * @return List<County>
      */
-    public List<County> loadCounty(int cityId) {
+    public List<County> loadCounties(int cityId) {
         List<County> list = new ArrayList<County>();
         Cursor cursor = db.query("City",null,"city_id = ?",new String[]{String.valueOf(cityId)},
                 null,null,null,null);
