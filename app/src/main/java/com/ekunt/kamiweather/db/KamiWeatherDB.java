@@ -153,7 +153,7 @@ public class KamiWeatherDB {
      */
     public List<County> loadCounties(int cityId) {
         List<County> list = new ArrayList<County>();
-        Cursor cursor = db.query("City",null,"city_id = ?",new String[]{String.valueOf(cityId)},
+        Cursor cursor = db.query("County",null,"city_id = ?",new String[]{String.valueOf(cityId)},
                 null,null,null,null);
         if (cursor.moveToFirst()) {
             do {
