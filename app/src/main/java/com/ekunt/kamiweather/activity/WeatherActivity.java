@@ -6,11 +6,15 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.ekunt.kamiweather.R;
 import com.ekunt.kamiweather.service.AutoUpdateService;
 import com.ekunt.kamiweather.util.HttpCallbackListener;
@@ -73,7 +77,6 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
             //没有县级代号就直接显示本地天气。
             showWeather();
         }
-
     }
 
     /**
@@ -187,6 +190,7 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
                 if (!TextUtils.isEmpty(weatherCode)) {
                     queryWeatherInfo(weatherCode);
                 }
+                Toast.makeText(WeatherActivity.this,"制作者：王艺焜，联系：wyk731497361@sina.com",Toast.LENGTH_LONG).show();
                 break;
             default:
                 break;
