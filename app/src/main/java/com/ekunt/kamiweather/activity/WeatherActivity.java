@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.ekunt.kamiweather.R;
+import com.ekunt.kamiweather.service.AutoUpdateService;
 import com.ekunt.kamiweather.util.HttpCallbackListener;
 import com.ekunt.kamiweather.util.HttpUtil;
 import com.ekunt.kamiweather.util.Utility;
@@ -148,6 +149,8 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
         currentDateText.setText(prefs.getString("current_date", ""));
         weatherInfoLayout.setVisibility(View.VISIBLE);
         cityNameText.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
 
