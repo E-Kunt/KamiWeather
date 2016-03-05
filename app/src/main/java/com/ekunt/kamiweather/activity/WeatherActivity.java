@@ -21,6 +21,9 @@ import com.ekunt.kamiweather.util.HttpCallbackListener;
 import com.ekunt.kamiweather.util.HttpUtil;
 import com.ekunt.kamiweather.util.Utility;
 
+import net.youmi.android.banner.AdSize;
+import net.youmi.android.banner.AdView;
+
 /**
  * Created by E-Kunt on 2016/2/21.
  */
@@ -77,6 +80,12 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
             //没有县级代号就直接显示本地天气。
             showWeather();
         }
+        // 实例化广告条
+        AdView adView = new AdView(this, AdSize.FIT_SCREEN);
+        // 获取要嵌入广告条的布局
+        LinearLayout adLayout=(LinearLayout)findViewById(R.id.adLayout);
+        // 将广告条加入到布局中
+        adLayout.addView(adView);
     }
 
     /**

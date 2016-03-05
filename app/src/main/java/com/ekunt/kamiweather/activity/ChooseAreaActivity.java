@@ -24,6 +24,8 @@ import com.ekunt.kamiweather.util.HttpCallbackListener;
 import com.ekunt.kamiweather.util.HttpUtil;
 import com.ekunt.kamiweather.util.Utility;
 
+import net.youmi.android.AdManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,6 +82,7 @@ public class ChooseAreaActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AdManager.getInstance(this).init("ec8c67b1a4580605","5f8f35dead09da7c",false);
         isFromWeatherActivity = getIntent().getBooleanExtra("from_weather_activity",false);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         //第一次启动若选择过城市,并且不是从天气界面跳转回来的，则直接跳到天气界面
